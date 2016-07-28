@@ -13,7 +13,7 @@ var mongoose = require('mongoose');
 var User = require('./models/user');
 var Post = require('./models/post');
 var PostsUsers = require('./models/posts_users');
-mongoose.connect('mongodb://localhost/ensembleNews');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/ensembleNews');
 
 // decode POST data in JSON and URL encoded formats
 app.use(bodyParser.json());
