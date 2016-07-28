@@ -1,0 +1,36 @@
+<div class="hero-unit" id="hero">
+  <div id="blankDiv">
+  </div>
+  <div class="overlay">
+    <h1 class="text-center main">Ensemble News</h1>
+    <h3 class="text-center">Bringing you the most up-to-date news of the day. Naturally.</h3>
+  </div>
+</div>
+
+<div class="container" infinite-scroll="loadMoreNews()" infinite-scroll-distance=".01">
+  <div class="form-group">
+    <input type="text" id="search" class="form-control smallerSearch shadow" ng-model="userSearch" ng-model-options="{ debounce: 3000 }">
+  </div>
+
+  <div>
+    <div class="row">
+      <div class="col-xs-6">
+      <h2><img class="guardianTitle" src="../img/guardian.png"></h2>
+        <div ng-repeat="result in results track by $index">
+          <div class="well guardian">
+            <h2 class="title"><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
+            <h4>{{result.sectionName}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6">
+      <h2><img  class="timesTitle" src="../img/times.jpg"></h2>
+        <div ng-repeat="result in resultsNY track by $index">
+          <div class="well times">
+            <h2 class="title"><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+            <h4>{{result.snippet}}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

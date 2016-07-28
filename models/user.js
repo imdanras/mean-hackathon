@@ -33,7 +33,7 @@ UserSchema.methods.authenticated = function(password, callback) {
   callback(null, isAuthenticated ? user : false)
 };
 
-User.Schema.pre('save', function(next) {
+UserSchema.pre('save', function(next) {
   if (!this.isModified('password')) {
     next();
   } else {

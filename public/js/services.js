@@ -1,5 +1,3 @@
-var app = angular.module('AuthServices', ['ngResource']);
-
 app.factory('Post', ['$resource', function($resource) {
   return $resource('/api/articles/:id');
 }])
