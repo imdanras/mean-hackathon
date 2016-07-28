@@ -1,4 +1,4 @@
-var app = angular.module('MissionCtrl', ['AuthServices']);
+//var app = angular.module('MissionCtrl', ['AuthServices']);
 
 app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
 
