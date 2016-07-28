@@ -21,9 +21,9 @@
   </head>
   <body ng-app="NewsOfToday" ng-controller="ApiCtrl" >
 
-    <div class="hero-unit">
-      <h1 class="text-center main">News of Today</h1>
-      <h3>Bringing you the most up-to-date news of the day. Naturally.</h3>
+    <div class="hero-unit" id="hero">
+      <h1 class="text-center main">Dueling Viewpoints</h1>
+      <h3 class="text-center">Bringing you the most up-to-date news of the day. Naturally.</h3>
     </div>
     <div class="container">
     <div class="form-group">
@@ -34,7 +34,7 @@
         <h2>The Guardian</h2>
           <div ng-repeat="result in results track by $index">
             <div class="well">
-              <h2><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
+              <h2 class="title"><a href="{{ result.webUrl }}" >{{ result.webTitle }}</a></h2>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@
         <h2>New York Times</h2>
           <div ng-repeat="result in resultsNY track by $index">
             <div class="well">
-              <h2><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+              <h2 class="title"><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
             </div>
           </div>
         </div>

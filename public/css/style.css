@@ -1,7 +1,10 @@
 .main {
   font-family: 'Arvo', serif;
+  margin-top: 0;
 }
-
+#search {
+  margin-top: 20px;
+}
 .hero-unit {
     background-image:url('../img/NewspaperMachine.jpg');
     background-size:cover;
@@ -9,3 +12,15 @@
     height:500px;
     color: white;
   }
+@media (max-width: 500px) {
+  #hero {
+    height: 200px;
+  }
+  h2 {
+    font-size: 1.2em;
+  }
+  .title {
+    font-size: 0.9em;
+    margin: 0;
+  }
+}
