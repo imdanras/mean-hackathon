@@ -1,11 +1,10 @@
-var app = angular.module('NewsOfToday', ['ui.router', 'infinite-scroll', 'MissionCtrl']);
+var app = angular.module('NewsOfToday', ['ui.router', 'infinite-scroll']);
 
 app.config([
   '$stateProvider',
   '$urlRouterProvider',
   '$locationProvider',
-  'authProvider',
-  function($stateProvider, $urlRouterProvider, $locationProvider, authProvider) {
+  function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/404');
 
     $stateProvider
