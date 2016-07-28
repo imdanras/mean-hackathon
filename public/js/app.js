@@ -5,7 +5,7 @@ app.config([
   '$urlRouterProvider',
   '$locationProvider',
   function($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.otherwise('/');
 
     $stateProvider
     .state('home', {

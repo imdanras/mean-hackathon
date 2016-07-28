@@ -122,13 +122,13 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.userSignup = function() {
     $http.post('/api/users', $scope.user).then(function success(res) {
-      $location.path('/public/views/userSignup');
+      $location.path('/');
     }, function error(res) {
-      console.log(data);
+      // console.log(res);
     });
   };
 }])
-.controller('LoginCtrl', ['$scope', '$http', '$location', function($scope, $http, $location) {
+.controller('LoginCtrl', ['$scope', '$http', '$location', 'Auth', function($scope, $http, $location, Auth) {
   $scope.user = {
     email: '',
     password: ''

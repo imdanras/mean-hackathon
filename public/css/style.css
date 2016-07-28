@@ -21,6 +21,14 @@ body {
 .timesTitle, .guardianTitle {
   width: 100%;
 }
+.formLogin {
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: middle;
+}
+.login {
+  text-align: center;
+}
 .overlay {
   background: rgba(00, 0, 0, 0.8);
   padding-top: 20px;
