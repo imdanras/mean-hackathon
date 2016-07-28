@@ -19,12 +19,16 @@
 
 
   </head>
-  <body ng-app="NewsOfToday" ng-controller="ApiCtrl" class="container">
-    <h1 class="text-center">The Main Page</h1>
+  <body ng-app="NewsOfToday" ng-controller="ApiCtrl" >
+
+    <div class="hero-unit">
+      <h1 class="text-center main">News of Today</h1>
+      <h3>Bringing you the most up-to-date news of the day. Naturally.</h3>
+    </div>
+    <div class="container">
     <div class="form-group">
       <input type="text" id="search" class="form-control smallerSearch shadow" ng-model="userSearch" ng-model-options="{ debounce: 1000 }">
     </div>
-    <div class="container">
       <div class="row">
         <div class="col-xs-6">
         <h2>The Guardian</h2>
