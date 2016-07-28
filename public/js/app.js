@@ -5,7 +5,7 @@ console.log('in the angular app');
 app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
   console.log('in the controller');
 
-  $scope.userSearch = 'economy';
+  $scope.userSearch = 'Economy';
   $scope.loadMoreGuardian = 10;
   $scope.loadMoreNewYorkTimes = 10;
   $scope.resultsNY = [];
