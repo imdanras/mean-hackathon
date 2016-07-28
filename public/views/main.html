@@ -19,6 +19,7 @@
         <div ng-repeat="result in results track by $index">
           <div class="well guardian">
             <h2 class="title"><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
+            <h4>{{result.sectionName}}</h4>
           </div>
         </div>
       </div>
@@ -27,6 +28,7 @@
         <div ng-repeat="result in resultsNY track by $index">
           <div class="well times">
             <h2 class="title"><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+            <h4>{{result.snippet}}</h4>
           </div>
         </div>
       </div>
