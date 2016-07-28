@@ -23,27 +23,35 @@
 
 
   </head>
-  <body ng-app="NewsOfToday" ng-controller="ApiCtrl" class="container">
-    <h1 class="text-center">The Main Page</h1>
+  <body ng-app="NewsOfToday" ng-controller="ApiCtrl" >
 
-    <div class="form-group">
-      <input type="text" id="search" class="form-control smallerSearch shadow" ng-model="userSearch" ng-model-options="{ debounce: 1000 }">
+    <div class="hero-unit">
+      <h1 class="text-center main">News of Today</h1>
+      <h3>Bringing you the most up-to-date news of the day. Naturally.</h3>
     </div>
 
-    <h3>The Guardian</h3>
-    <div class="container" infinite-scroll="loadMoreNews()" infinite-scroll-distance=".1">
-      <div ng-repeat="result in results track by $index">
-        <div class="well">
-          <h2><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
-        </div>
-      </div>
+    <div class="container" infinite-scroll="loadMoreNews()" infinite-scroll-distance=".01">
+      <div class="form-group">
+        <input type="text" id="search" class="form-control smallerSearch shadow" ng-model="userSearch" ng-model-options="{ debounce: 3000 }">
       </div>
 
-
-      <h3>The New York Times</h3>
-        <div ng-repeat="result in resultsNY track by $index">
-          <div class="well">
-            <h2><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+      <div>
+        <div class="row">
+          <div class="col-xs-6">
+          <h2>The Guardian</h2>
+            <div ng-repeat="result in results track by $index">
+              <div class="well">
+                <h2><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-6">
+          <h2>New York Times</h2>
+            <div ng-repeat="result in resultsNY track by $index">
+              <div class="well">
+                <h2><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+              </div>
+            </div>
           </div>
         </div>
     </div>

@@ -1,3 +1,11 @@
 .main {
   font-family: 'Arvo', serif;
 }
+
+.hero-unit {
+    background-image:url('../img/NewspaperMachine.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+    height:500px;
+    color: white;
+  }

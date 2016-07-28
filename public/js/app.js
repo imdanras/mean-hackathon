@@ -8,6 +8,8 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.userSearch = 'economy';
   $scope.loadMoreGuardian = 10;
   $scope.loadMoreNewYorkTimes = 10;
+  $scope.resultsNY = [];
+  $scope.results = [];
 
   $scope.$watch('userSearch', function(newVal, oldVal) {
     console.log('123 ', $scope.userSearch);
@@ -30,7 +32,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
       params: {
         'q': $scope.userSearch,
         'api-key': 'ce7f37805b464dbfb55e245a5c396f8d',
-        limit: 10
+        'page': 0
       }
     })
     .then(function success(res) {
@@ -42,7 +44,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
   });
 
   $scope.searchMoreGuardian = function() {
-    console.log('searching news');
+    console.log('searching news, guardian', $scope.loadMoreGuardian);
     $http.get('http://content.guardianapis.com/search?', {
       params: {
         'q': $scope.userSearch,
@@ -52,32 +54,32 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
     })
     .then(function success(res) {
       console.log('success ',res.data.response.results);
-      $scope.results = res.data.response.results;
-      $scope.loadMoreGuardian += 10;
+      $scope.results = $scope.results.concat(res.data.response.results);
     }, function error(res) {
       console.log(res.data);
     });
   };
 
   $scope.searchMoreNewYorkTimes = function() {
-    console.log('searching news');
+    console.log('searching news, NYT', $scope.loadMoreNewYorkTimes);
     $http.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
       params: {
         'q': $scope.userSearch,
         'api-key': 'ce7f37805b464dbfb55e245a5c396f8d',
-        limit: $scope.loadMoreNewYorkTimes
+        'page': $scope.loadMoreNewYorkTimes
       }
     })
     .then(function success(res) {
       console.log('success ',res.data.response.docs);
-      $scope.resultsNY = res.data.response.docs;
-      $scope.loadMoreNewYorkTimes += 10;
+      $scope.resultsNY = $scope.resultsNY.concat(res.data.response.docs);
     }, function error(res) {
       console.log(res.data);
     });
   };
 
   $scope.loadMoreNews = function() {
+    $scope.loadMoreNewYorkTimes += 1;
+    $scope.loadMoreGuardian += 5;
     $scope.searchMoreGuardian();
     $scope.searchMoreNewYorkTimes();
   };
