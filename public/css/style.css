@@ -5,6 +5,11 @@
 #search {
   margin-top: 20px;
 }
+
+.guardian {
+  background-color: #33ccff;
+}
+
 .hero-unit {
     background-image:url('../img/NewspaperMachine.jpg');
     background-size:cover;

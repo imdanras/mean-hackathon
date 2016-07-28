@@ -1,4 +1,4 @@
-var app = angular.module('NewsOfToday', ['ui.router', 'infinite-scroll', 'MissionCtrl']);
+var app = angular.module('NewsOfToday', ['ui.router', 'infinite-scroll']);
 
 app.config([
   '$stateProvider',
