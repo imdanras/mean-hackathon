@@ -1,15 +1,32 @@
-.main {
+body {
   font-family: 'Arvo', serif;
+}
+.main {
   margin-top: 0;
 }
-#search {
-  margin-top: 20px;
+#blankDiv {
+  height: 50px;
 }
-
+#search {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  height: 40px;
+  font-size: 2em;
+}
 .guardian {
   background-color: #33ccff;
 }
-
+.timesTitle, .guardianTitle {
+  width: 100%;
+}
+.overlay {
+  background: rgba(00, 0, 0, 0.8);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: -50px;
+}
 .hero-unit {
     background-image:url('../img/NewspaperMachine.jpg');
     background-size:cover;
@@ -27,5 +44,9 @@
   .title {
     font-size: 0.8em;
     margin: 0;
+  }
+  #search {
+    margin-top: 40px;
+    font-size: 1.2em;
   }
 }
