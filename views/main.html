@@ -41,7 +41,7 @@
           <h2>The Guardian</h2>
             <div ng-repeat="result in results track by $index">
               <div class="well">
-                <h2><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
+                <h2 class="title"><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
           <h2>New York Times</h2>
             <div ng-repeat="result in resultsNY track by $index">
               <div class="well">
-                <h2><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
+                <h2 class="title"><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
               </div>
 <!-- =======
     <div class="container">
