@@ -43,7 +43,7 @@
           <div class="col-xs-6">
           <h2>The Guardian</h2>
             <div ng-repeat="result in results track by $index">
-              <div class="well">
+              <div class="well guardian">
                 <h2 class="title"><a href="{{ result.webUrl }}">{{ result.webTitle }}</a></h2>
               </div>
             </div>
@@ -51,7 +51,7 @@
           <div class="col-xs-6">
           <h2>New York Times</h2>
             <div ng-repeat="result in resultsNY track by $index">
-              <div class="well">
+              <div class="well times">
                 <h2 class="title"><a href="{{result.web_url}}">{{result.headline.main}}</a></h2>
               </div>
 <!-- =======
