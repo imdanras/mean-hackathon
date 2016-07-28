@@ -4,8 +4,7 @@ app.config([
   '$stateProvider',
   '$urlRouterProvider',
   '$locationProvider',
-  'authProvider',
-  function($stateProvider, $urlRouterProvider, $locationProvider, authProvider) {
+  function($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider.otherwise('/404');
 
     $stateProvider
