@@ -122,7 +122,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.userSignup = function() {
     $http.post('/api/users', $scope.user).then(function success(res) {
-      $location.path('/');
+      $location.path('/public/views/userSignup');
     }, function error(res) {
       console.log(data);
     });

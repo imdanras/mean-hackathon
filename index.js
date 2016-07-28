@@ -50,7 +50,7 @@ app.post('/api/auth', function(req, res) {
 });
 
 app.get('/*', function(req, res) {
-  res.sendFile(__dirname + '/views/main.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 var server = app.listen(process.env.PORT || 3000);

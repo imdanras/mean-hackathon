@@ -17,6 +17,7 @@ router.route('/')
       User.create(req.body, function(err, user) {
         if (err) return res.status(500).send(err);
 
+
         return res.send(user);
       });
     });
