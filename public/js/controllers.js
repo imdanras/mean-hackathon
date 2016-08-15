@@ -12,7 +12,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
   $scope.$watch('userSearch', function(newVal, oldVal) {
     console.log('123 ', $scope.userSearch);
     // Guardian Api
-    $http.get('http://content.guardianapis.com/search?', {
+    $http.get('https://content.guardianapis.com/search?', {
       params: {
         'q': $scope.userSearch,
         'api-key': '4cdd2f97-c605-4a74-943d-658610eba365',
@@ -20,7 +20,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
       }
     })
     .then(function success(res) {
-      console.log('success ', res.data.response.results);
+      console.log('guardian ', res.data.response.results);
       $scope.results = res.data.response.results;
     }, function error(res) {
       console.log(res.data);
@@ -56,7 +56,7 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
 
   $scope.searchMoreGuardian = function() {
     console.log('searching news, guardian', $scope.loadMoreGuardian);
-    $http.get('http://content.guardianapis.com/search?', {
+    $http.get('https://content.guardianapis.com/search?', {
       params: {
         'q': $scope.userSearch,
         'api-key': '4cdd2f97-c605-4a74-943d-658610eba365',
