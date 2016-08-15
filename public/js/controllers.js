@@ -39,19 +39,6 @@ app.controller('ApiCtrl', ['$scope', '$http', function($scope, $http) {
     }, function error(res) {
       console.log(res);
     });
-    // Buzzfeed Api
-    $http.jsonp('http://www.buzzfeed.com/api/v2/feeds/news', {
-      params: {
-        'q': $scope.userSearch,
-        'jsonp': 'JSON_CALLBACK'
-      }
-    })
-    .then(function success(res) {
-      console.log('buzzfeed ', res.data.big_stories);
-      $scope.resultsBuzz = res.data.big_stories;
-    }, function error(res) {
-      console.log('buzzfeed ', res.data)
-    })
   });
 
   $scope.searchMoreGuardian = function() {
